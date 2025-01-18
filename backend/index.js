@@ -18,9 +18,9 @@ app.use(
 app.use(bodyParser.json());
 
 // Add /api prefix to all routes
-app.use("/api/tasks", TaskRouter);
+app.use("/tasks", TaskRouter);
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello from server ");
 });
 
