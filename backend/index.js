@@ -16,12 +16,14 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-app.use("/tasks", TaskRouter);
 
-app.get("/", (req, res) => {
+// Add /api prefix to all routes
+app.use("/api/tasks", TaskRouter);
+
+app.get("/api", (req, res) => {
   res.send("hello from server ");
 });
 
 app.listen(port, () => {
-  console.log("server is runnig on port ", port);
+  console.log("server is running on port ", port);
 });
