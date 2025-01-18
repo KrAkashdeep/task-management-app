@@ -1,7 +1,7 @@
 import { API_URL } from "./utils";
 
 export const createTask = async (taskObj) => {
-  const url = `${API_URL}tasks`;
+  const url = `${API_URL}/tasks`;
   const option = {
     method: "POST",
     headers: {
