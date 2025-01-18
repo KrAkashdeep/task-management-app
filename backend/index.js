@@ -8,7 +8,12 @@ const TaskRouter = require("./Routes/TaskRouter");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 app.use("/tasks", TaskRouter);
 
