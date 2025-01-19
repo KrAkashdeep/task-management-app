@@ -10,12 +10,16 @@ const cors = require("cors");
 // backend(frontend ka url ayega)
 app.use(bodyParser.json());
 app.use("/tasks", TaskRouter);
+const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://task-management-xi-six.vercel.app"],
-    methods: ["GET", "POST"],
+    origin: "https://task-management-xi-six.vercel.app",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   })
 );
 
