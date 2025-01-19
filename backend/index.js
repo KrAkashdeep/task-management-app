@@ -1,16 +1,12 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 require("dotenv").config();
 require("./Models/db");
 const TaskRouter = require("./Routes/TaskRouter");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-
-app.use(bodyParser.json());
-app.use("/tasks", TaskRouter);
-const cors = require("cors");
 
 app.use(
   cors({
@@ -22,7 +18,8 @@ app.use(
     optionsSuccessStatus: 204,
   })
 );
-
+app.use(bodyParser.json());
+app.use("/tasks", TaskRouter);
 app.get("/", (req, res) => {
   res.send("hello from server");
 });
