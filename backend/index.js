@@ -7,7 +7,7 @@ require("./Models/db");
 const TaskRouter = require("./Routes/TaskRouter");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+// backend(frontend ka url ayega)
 app.use(
   cors({
     origin: [""],
