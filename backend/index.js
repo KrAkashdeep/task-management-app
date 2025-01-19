@@ -10,7 +10,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://task-management-tau-gold.vercel.app"],
+    origin: [""],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
