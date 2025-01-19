@@ -1,5 +1,5 @@
-import { API_URL } from "./utils";
-
+// import { API_URL } from "./utils";
+const API_URL = "https://task-management-backend-swart.vercel.app";
 export const createTask = async (taskObj) => {
   const url = `${API_URL}/tasks`;
   const option = {
