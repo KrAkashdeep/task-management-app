@@ -5,5 +5,5 @@ export const notify = (message, type) => {
 };
 
 // const isDevelopment = process.env.NODE_ENV === "development";
-
-export const API_URL = "";
+// frontend(backend ka url ayega)
+export const API_URL = "https://task-management-backend-swart.vercel.app";
