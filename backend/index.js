@@ -10,19 +10,19 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin:
+    origin: [
       "https://task-management-tau-gold.vercel.app" || "http://localhost:3000",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 app.use(bodyParser.json());
 
-// Add /api prefix to all routes
 app.use("/tasks", TaskRouter);
 
 app.get("/", (req, res) => {
-  res.send("hello from server ");
+  res.send("hello from server");
 });
 
 app.listen(port, () => {
