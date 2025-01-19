@@ -8,16 +8,16 @@ const TaskRouter = require("./Routes/TaskRouter");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 // backend(frontend ka url ayega)
+app.use(bodyParser.json());
+app.use("/tasks", TaskRouter);
+
 app.use(
   cors({
     origin: ["https://task-management-xi-six.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
-app.use(bodyParser.json());
-
-app.use("/tasks", TaskRouter);
 
 app.get("/", (req, res) => {
   res.send("hello from server");
